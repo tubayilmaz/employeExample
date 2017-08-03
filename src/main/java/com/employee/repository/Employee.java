@@ -1,4 +1,4 @@
-package com.employ.repository;
+package com.employee.repository;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,8 +12,10 @@ public class Employee implements Serializable {
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "id")
     private int employeeId;
-    @Column(name="name")
-    private String name;
+    @Column(name="firstname")
+    private String firstName;
+    @Column(name="lastname")
+    private String lastName;
     @Column(name="created")
     private Timestamp create_Time;
 
@@ -25,13 +27,17 @@ public class Employee implements Serializable {
         this.employeeId = employeeId;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
+
+    public String getLastName() { return lastName; }
+
+    public void setLastName(String lastName) { this.lastName = lastName; }
 
     public Timestamp getCreate_Time() {
         return create_Time;
@@ -40,5 +46,6 @@ public class Employee implements Serializable {
     public void setCreate_Time(Timestamp create_Time) {
         this.create_Time = create_Time;
     }
+
 
 }
